@@ -1,0 +1,1 @@
+select title, img, price, info from gamer_inventory;
