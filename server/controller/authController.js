@@ -37,6 +37,7 @@ module.exports = {
           email: foundUser[0].email,
           username: foundUser[0].username
         };
+        req.session.cart = [];
 
         res.status(200).send(req.session.user);
       } else {

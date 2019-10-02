@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { gamerMerch, getMerchDetails } = require("./controller/merchInventory");
+const { gamerMerch, getDetails } = require("./controller/merchInventory");
 const express = require("express");
 const session = require("express-session");
 const massive = require("massive");
@@ -11,8 +11,7 @@ const {
   getGamerSession
 } = require("./controller/authController.js");
 
-const { gamerUsername } = require("./controller/gamerController");
-
+const { getOne } = require("./controller/cartController");
 const { SESSION_SECRET, CONNECTION_STRING } = process.env;
 
 app.use(express.json());
@@ -43,11 +42,8 @@ app.get("/api/gamerdata", getGamerSession);
 // merch, cart, and details
 
 app.get("/api/gamermerch", gamerMerch);
-// app.put("/api/updatecart", updateCart);
-app.get("/api/details", getMerchDetails);
-
-// gamer profile
-app.get("/api/username", gamerUsername);
+app.get("/api/gamermerch/:id", getOne);
+app.get("/api/details", getDetails);
 
 const port = 4000;
 app.listen(port, () => console.log(`listening on port ${port}`));

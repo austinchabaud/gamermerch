@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Details from "./Details";
 import axios from "axios";
 import styled from "styled-components";
 export default class Merch extends Component {
@@ -14,34 +15,25 @@ export default class Merch extends Component {
       this.setState({ merch: res.data });
     });
   }
-  addToCart() {
-    axios.post("/api/updatecart").then(res => {
-      this.setState({ merch: res.data.push() });
-    });
-  }
   render() {
     const addToCart = this.state.addToCart;
 
     const displayMerch = this.state.merch.map(merch => {
       return (
-        <Link key={merch.id} className="cardlink" to="/details">
-          <div className="merch-card" key={merch.id}>
-            <div className="merch-box">
-              <img src={merch.img} />
-              <h3>{merch.title}</h3>
-              <h2 className="dolla">$ {merch.price}</h2>
-              <Link to="/cart">
-                <button className="addCart" onClick={addToCart}>
-                  <i className="fas fa-shopping-cart" />
-                  Add to Cart
-                </button>
-              </Link>
-              <Link to="/details">
-                <button className="merch-details">Details</button>
-              </Link>
-            </div>
+        <div className="merch-card" key={merch.id}>
+          <div className="merch-box">
+            <img src={merch.img} />
+            <h3>{merch.title}</h3>
+            <h2 className="dolla">$ {merch.price}</h2>
+            <button className="addCart" onClick={addToCart}>
+              <i className="fas fa-shopping-cart" />
+              Add to Cart
+            </button>
+            <Link to="/details">
+              <button className="merch-details">Details</button>
+            </Link>
           </div>
-        </Link>
+        </div>
       );
     });
     return (

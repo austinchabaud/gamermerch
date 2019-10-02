@@ -1,3 +1,4 @@
+-- gamer info table
 create table gamer_info
 (
     id serial primary key,
@@ -5,12 +6,12 @@ create table gamer_info
     password text not null,
     username text not null
 );
-
+-- inserting info
 insert into gamer_info
     (email, password, username)
 values
     ('austinc@gmail.com', '1234', 'austinc');
-
+-- inventory table
 create table gamer_inventory
 (
     id serial primary key,
@@ -22,7 +23,7 @@ create table gamer_inventory
     items integer not null,
     total integer not null
 );
-
+-- inventory
 insert into gamer_inventory
 (title, img, price, info, inCart, items, total)
 values
@@ -197,11 +198,15 @@ values
     0,
     0
 );
-
+-- previous orders
 create table merch_orders
 (
     id serial primary key,
     order_date date default now(),
-    gamer_id integer references gamer_inventory(id),
+    inventory_id integer references gamer_inventory(id),
     gamer_info_id integer references gamer_info(id)
 );
+-- details
+select title, img, price, info from gamer_inventory;
+-- get one item from inventory
+select * from gamer_inventory where  gamer_inventory_id = $1;

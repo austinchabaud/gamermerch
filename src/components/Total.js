@@ -9,7 +9,7 @@ export default class Total extends Component {
       <div>
         <h3>
           <span> Subtotal:</span>
-          <span> $</span>
+          <h3> $</h3>
         </h3>
         <h3>
           <span> Tax (9%)</span>

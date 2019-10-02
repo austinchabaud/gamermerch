@@ -3,8 +3,8 @@ module.exports = {
     const db = req.app.get("db");
     db.gamer_merch().then(merch => res.status(200).send(merch));
   },
-  getMerchDetails: (req, res) => {
+  getDetails: (req, res) => {
     const db = req.app.get("db");
-    db.details().then(details => res.status(200).send(details));
+    db.details().then(info => res.status(200).send(info));
   }
 };
