@@ -4,13 +4,14 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  font-size: 0.5rem;
+  font-size: 0.3rem;
+
   h3 {
     font-size: 2rem;
-    color: limegreen;
+    color: var(--mainPurple);
   }
 }
-img {
+.cartimg {
   max-width: 50%;
   max-height: 50%;
   height: 5rem;
@@ -19,15 +20,26 @@ img {
 }
 
 .cartitems {
-  height: 10rem;
+  height: 13rem;
   width: 20rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 20px;
-  background: var(--mainWhite);
   flex-wrap: wrap;
   border: 0.2rem solid lightgrey;
   border-radius: 0.5rem;
-  box-shadow: 0 0 20px 0 rgba(5, 100, 50, 0.9);
+}
+
+.stripe {
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+@media (min-width: 500px) and (max-width: 501px) {
+  .cartdisplay {
+    height: 5rem;
+    width: 10rem;
+  }
 }

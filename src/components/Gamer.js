@@ -25,6 +25,15 @@ class Gamer extends Component {
             <img src="https://res.cloudinary.com/dbhzcqzuh/image/upload/v1569609978/gamemerch/gamemerch_twitchdefault_abmrjl-Circle_lfcrl3.png" />
           </div>
           <div className="name">{this.props.user.username}</div>
+
+          <div>
+            <h3>Previous Purchases</h3>
+            <ul>
+              <li>Pepega Morning Coffee Mug</li>
+              <li>Thug Life Sunglasses</li>
+              <li>Overwatch Logo Athletic Akle Socks</li>
+            </ul>
+          </div>
         </div>
       </ProfileWrapper>
     );

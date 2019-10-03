@@ -28,7 +28,7 @@ class Navbar extends Component {
             </button>
           </Link>
           <Link to="/gamer">
-            <button className="cartbutton">
+            <button className="profilebutton">
               <span>
                 <i className="fas fa-user" /> Gamer
               </span>
@@ -106,6 +106,17 @@ const NavWrapper = styled.div`
     cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
+  .profilebutton {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    background: transparent;
+    border: 0.1rem solid var(--lightPurple);
+    border-radius: 0.5rem;
+    color: var(--lightPurple);
+    margin-left: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
   button{
     background: var(--lightPurple);
     color: var(--mainWhite);
@@ -116,4 +127,18 @@ const NavWrapper = styled.div`
     background: var(--lightPurple);
     color: var(--mainWhite);
   }
+  @media screen and (max-width: 500px) {
+    .profilebutton{
+      display: none;
+    }
+    .cartbutton{
+      font-size: 0.7rem;
+    }
+    .logo{
+      font-size: 0.5rem;
+    }
+    
+    
+  }
+
 `;
