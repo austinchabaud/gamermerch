@@ -11,7 +11,7 @@ const {
   getGamerSession
 } = require("./controller/authController.js");
 
-const { getOne } = require("./controller/cartController");
+const { addToCart, getCart } = require("./controller/cartController");
 const { SESSION_SECRET, CONNECTION_STRING } = process.env;
 
 app.use(express.json());
@@ -42,8 +42,9 @@ app.get("/api/gamerdata", getGamerSession);
 // merch, cart, and details
 
 app.get("/api/gamermerch", gamerMerch);
-app.get("/api/gamermerch/:id", getOne);
-app.get("/api/details", getDetails);
+app.post("/api/gamermerch", addToCart);
+app.get("/api/cart", getCart);
+app.post("/api/details", getDetails);
 
 const port = 4000;
 app.listen(port, () => console.log(`listening on port ${port}`));

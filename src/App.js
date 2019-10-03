@@ -9,7 +9,7 @@ import MerchList from "./components/MerchList";
 import "./App.css";
 import axios from "axios";
 import AuthComponent from "./components/AuthComponent";
-import Cart from "./components/Cart";
+import Cart from "./components/Cart/Cart";
 import Gamer from "./components/Gamer";
 class App extends Component {
   componentDidMount() {

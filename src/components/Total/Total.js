@@ -8,16 +8,9 @@ export default class Total extends Component {
     return (
       <div>
         <h3>
-          <span> Subtotal:</span>
-          <h3> $</h3>
-        </h3>
-        <h3>
-          <span> Tax (9%)</span>
-          <span> </span>
-        </h3>
-        <h3>
-          <span> Total:</span>
-          <span> </span>
+          <span>
+            <h3> Total: $</h3>
+          </span>
         </h3>
       </div>
     );

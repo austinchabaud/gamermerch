@@ -15,9 +15,12 @@ export default class Merch extends Component {
       this.setState({ merch: res.data });
     });
   }
+  addToCart = merch => {
+    axios
+      .post("/api/gamermerch", merch)
+      .then(res => console.log("in cart", res.data));
+  };
   render() {
-    const addToCart = this.state.addToCart;
-
     const displayMerch = this.state.merch.map(merch => {
       return (
         <div className="merch-card" key={merch.id}>
@@ -25,7 +28,7 @@ export default class Merch extends Component {
             <img src={merch.img} />
             <h3>{merch.title}</h3>
             <h2 className="dolla">$ {merch.price}</h2>
-            <button className="addCart" onClick={addToCart}>
+            <button className="addCart" onClick={() => this.addToCart(merch)}>
               <i className="fas fa-shopping-cart" />
               Add to Cart
             </button>
